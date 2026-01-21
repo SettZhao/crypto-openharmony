@@ -1,0 +1,22 @@
+{
+  "license": "Apache-2.0",
+  "dependencies": {
+    "libhmcrypto.so": "file:./src/main/cpp/types/libhmcrypto",
+  },
+  "author": "SettZhao",
+  "name": "@harmony-lib/crypto",
+  "description": "",
+  "main": "index.ets",
+  "version": "1.0.0-rc.0",
+  "dependencies": {},
+  "repository": "https://github.com/SettZhao/crypto-openharmony",
+  "type": "module",
+  "keywords": [
+    "crypto",
+    "openHarmony"
+  ],
+  "types": "",
+  "tags": [
+    "Tool"
+  ]
+}

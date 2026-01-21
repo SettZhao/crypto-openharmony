@@ -1,0 +1,9 @@
+{
+  "module": {
+    "name": "crypto",
+    "type": "har",
+    "deviceTypes": [
+      "default"
+    ]
+  }
+}

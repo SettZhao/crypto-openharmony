@@ -1,0 +1,10 @@
+[
+  {
+      "Name": "openssl",
+      "License": "Apache-2.0",
+      "License File": "https://github.com/openssl/openssl/blob/master/LICENSE.txt",
+      "Version Number": "3.5.0",
+      "Upstream URL": "https://github.com/openssl/openssl",
+      "Description": "TLS/SSL and crypto library"
+  }
+]

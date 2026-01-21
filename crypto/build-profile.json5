@@ -1,0 +1,19 @@
+{
+  "apiType": "stageMode",
+  "buildOption": {
+    "externalNativeOptions": {
+      "path": "./src/main/cpp/CMakeLists.txt",
+      "arguments": "-DCMKAE_BUILD_TYPE=Debug",
+      "abiFilters": [
+        "arm64-v8a",
+        "armeabi-v7a"
+      ],
+      "cppFlags": ""
+    },
+  },
+  "targets": [
+    {
+      "name": "default"
+    }
+  ]
+}

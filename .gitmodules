@@ -1,0 +1,3 @@
+[submodule "crypto/src/main/cpp/thirdparty/libboundscheck"]
+	path = crypto/src/main/cpp/thirdparty/libboundscheck
+	url = https://atomgit.com/openeuler/libboundscheck

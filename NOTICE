@@ -1,0 +1,48 @@
+===============================================================================
+NOTICE FILE
+===============================================================================
+
+Project Name: @harmony-lib/crypto
+Copyright (c) 2026 SettZhao
+
+This project incorporates third-party open-source software during development.
+The copyright and license terms of these components are independent of this
+project's own license.
+
+-------------------------------------------------------------------------------
+1. OpenSSL
+-------------------------------------------------------------------------------
+Version: 3.5.0
+License: Apache License 2.0
+Project Link: https://www.openssl.org/
+
+Original Copyright Notice:
+Copyright (c) 1998-2023 The OpenSSL Project. All rights reserved.
+Copyright (c) 1995-1998 Eric A. Young, Tim Hudson. All rights reserved.
+
+This project includes code from OpenSSL, and its use is governed by the
+Apache License 2.0. The full license text can be found at:
+- The file `LICENSE-APACHE-2.0` in the `licenses/` directory of this project
+- Or at https://www.apache.org/licenses/LICENSE-2.0
+
+===============================================================================
+LICENSE OF THIS PROJECT
+===============================================================================
+
+This project itself is licensed under the Apache License 2.0 license.
+Please see the `LICENSE` file in the root directory of this project for the full
+license text.
+
+===============================================================================
+IMPORTANT LEGAL DISCLAIMER
+===============================================================================
+
+This NOTICE file is provided solely for the purpose of declaring the third-party
+software components used by this project and their respective license terms.
+
+For these third-party components, their use, modification, and distribution must
+comply with their own license agreements. This project does not hold the
+copyright for any third-party software and provides no warranty for such software.
+
+Contributions made directly to this project are subject to the terms of this
+project's primary license.
