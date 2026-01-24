@@ -1,1 +1,2 @@
 export const encrypt: (cipherName: string, key: ArrayBuffer, iv: ArrayBuffer, padding: number, data: ArrayBuffer) => ArrayBuffer;
+export const decrypt: (cipherName: string, key: ArrayBuffer, iv: ArrayBuffer, padding: number, data: ArrayBuffer) => ArrayBuffer;
