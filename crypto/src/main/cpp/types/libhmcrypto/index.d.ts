@@ -1,0 +1,1 @@
+export const encrypt: (cipherName: string, key: ArrayBuffer, iv: ArrayBuffer, padding: number, data: ArrayBuffer) => ArrayBuffer;

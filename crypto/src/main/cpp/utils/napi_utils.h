@@ -21,6 +21,7 @@
 #include "napi/native_api.h"
 namespace napi_utils {
     std::string get_string_from_napi_value(napi_env env, napi_value value);
+    unsigned char* get_arraybuffer_from_napi_value(napi_env env, napi_value value, size_t* out_length);
     int32_t get_int32_from_napi_value(napi_env env, napi_value value);
     int64_t get_int64_from_napi_value(napi_env env, napi_value value);
     bool get_bool_from_napi_value(napi_env env, napi_value value);

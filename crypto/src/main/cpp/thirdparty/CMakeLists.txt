@@ -28,3 +28,15 @@ add_library(boundscheck
             ${TAGET_BOUNDSCHECK_SRC_PATH}/securecutil.c)
 include_directories(${TAGET_BOUNDSCHECK_SRC_PATH}
                     ${CMAKE_CURRENT_SOURCE_DIR}/libboundscheck/include)
+# ==================== openssl 库 ====================
+message(STATUS "Building openssl library...")
+# ✅ 定义 OpenSSL 路径变量（提高可维护性）
+set(OPENSSL_ROOT ${CMAKE_CURRENT_SOURCE_DIR}/openssl/${OHOS_ARCH})
+
+add_library(openssl INTERFACE)
+
+# ✅ 包含必要的头文件目录
+target_include_directories(openssl INTERFACE ${OPENSSL_ROOT}/include)
+
+# ✅ 链接 OpenSSL 静态库
+target_link_libraries(openssl INTERFACE ${OPENSSL_ROOT}/lib/libssl.a ${OPENSSL_ROOT}/lib/libcrypto.a)

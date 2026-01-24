@@ -17,6 +17,7 @@
 #include "napi/native_api.h"
 #include "hilog_helper.h"
 #include <cstdint>
+#include <string.h>
 #include <string>
 namespace napi_utils {
     std::string get_string_from_napi_value(napi_env env, napi_value value){
@@ -35,6 +36,24 @@ namespace napi_utils {
         }
         return res;
     }
+
+    unsigned char* get_arraybuffer_from_napi_value(napi_env env, napi_value value, size_t* out_length){
+        void* data = nullptr;
+        size_t length = 0;
+        napi_status status = napi_get_arraybuffer_info(env, value, &data, &length);
+        LOGI("ArrayBuffer length: %{public}zu", length);
+        if (status != napi_ok) {
+            LOGE("napi get arraybuffer info failed");
+            if (out_length) *out_length = 0;
+            return nullptr;
+        }
+        if (out_length) {
+            *out_length = length;
+        }
+        // 直接返回原始指针,不需要复制(数据生命周期由JS管理)
+        return static_cast<unsigned char*>(data);
+    }
+
 
     int64_t get_int64_from_napi_value(napi_env env, napi_value value){
         int64_t res = 0;

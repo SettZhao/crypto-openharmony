@@ -25,6 +25,7 @@ target_link_libraries(hmcrypto PUBLIC
     libace_napi.z.so      # ACE NAPI库：提供JavaScript和C++交互的接口
     libhilog_ndk.z.so     # HiLog库：HarmonyOS的日志系统
     boundscheck           # ✅ 安全字符串库（用于mqtt wrapper中的安全函数调用）
+    openssl
 )
 
 if(CMAKE_BUILD_TYPE STREQUAL "Release")
