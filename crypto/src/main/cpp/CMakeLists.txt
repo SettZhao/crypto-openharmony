@@ -7,15 +7,16 @@ set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})
 set(CMAKE_CXX_FLAGS_RELEASE "-O3 -DNDEBUG")
 set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
 
-# 添加Paho MQTT C库（开源的MQTT协议实现）
 add_subdirectory(thirdparty)
 
 add_library(hmcrypto SHARED napi_init.cpp
+global_init.cpp
+global_init.h
 utils/hilog_helper.h
 utils/hilog_helper.cpp
 utils/napi_utils.h
 utils/napi_utils.cpp
-)
+ encrypt.h encrypt.cpp)
 
 target_include_directories(hmcrypto PRIVATE
     ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/libboundscheck/include
@@ -24,7 +25,7 @@ target_include_directories(hmcrypto PRIVATE
 target_link_libraries(hmcrypto PUBLIC
     libace_napi.z.so      # ACE NAPI库：提供JavaScript和C++交互的接口
     libhilog_ndk.z.so     # HiLog库：HarmonyOS的日志系统
-    boundscheck           # ✅ 安全字符串库（用于mqtt wrapper中的安全函数调用）
+    boundscheck           # ✅ 安全字符串库
     openssl
 )
 
@@ -42,10 +43,7 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
     # 注意：-march=native 不适用于交叉编译，已移除
     add_compile_options(-O3)
 
-    # 为mqtt目标添加特定的编译选项
-    # PRIVATE: 只对mqtt本身有效
     target_compile_options(hmcrypto PRIVATE ${LTO_FLAG})
 
-    # 为mqtt目标添加链接选项
     target_link_options(hmcrypto PRIVATE ${LTO_FLAG})
 endif()
